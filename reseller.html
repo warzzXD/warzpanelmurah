@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseller Panel Free</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .tombol {
+      padding: 20px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    .notif {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="mus.mp3" type="audio/mp3">
+  </audio>
+  <div class="notif" id="notif">JANGAN SEBAR LINK AMA PASSWORD NYA YA ANJAI 😘</div>
+  <a href="https://chat.whatsapp.com/KBVYVSLan0H8OD84NrUTeB" target="_blank" class="tombol">Reseller Panel Free</a>
+
+  <script>
+    window.onload = function() {
+      document.getElementById("notif").style.display = "block";
+      setTimeout(function() {
+        document.getElementById("notif").style.display = "none";
+      }, 3000);
+    };
+  </script>
+</body>
+</html>

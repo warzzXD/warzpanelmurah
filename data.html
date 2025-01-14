@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #0000FF;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            color: #000000;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #000000;
+            border-radius: 25px;
+            font-size: 1em;
+        }
+        input[type="file"] {
+            width: auto;
+            display: inline-block;
+        }
+        .file-label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-size: 0.8em;
+            color: #000000;
+        }
+        .submit-btn {
+            background-color: #FF0000;
+            color: #000000;
+            padding: 15px 30px;
+            border: 2px solid #000000;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HARAP ISI DATA DATA DI BAWAH</h1>
+        <form id="dataForm">
+            <input type="text" id="name" placeholder="Nama Anda..." required><br>
+            <input type="text" id="whatsapp" placeholder="Nomor Whatsapp..." required><br>
+            <input type="text" id="ram" placeholder="Ram Yang Anda Beli..." required><br>
+            <input type="file" id="upload" required><label for="upload" class="file-label">Upload Gambar Bukti Transaksi Di Atas</label><br>
+            <button type="submit" class="submit-btn">KIRIM</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const ram = document.getElementById('ram').value;
+            const file = document.getElementById('upload').files[0];
+
+            const formData = new FormData();
+            formData.append('chat_id', '7336408897');
+            formData.append('caption', `[ 𝙋𝙀𝙎𝘼𝙉𝘼  𝘽𝘼𝙍𝙐 𝙅𝙐𝙍𝘼𝙂𝘼𝙉 ]\n\nNama: ${name}\n\nWhatsapp: ${whatsapp}\n\nRam yng di beli: ${ram}`);
+            formData.append('document', file);
+
+            fetch(`https://api.telegram.org/bot7691058191:AAGOAaASn0EPZe2eBOrZ26N778qT05ALoww/sendDocument`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Gagal mengirim data. Silakan coba lagi.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            });
+        });
+    </script>
+</body>
+</html>

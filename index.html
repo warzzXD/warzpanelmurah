@@ -1,0 +1,216 @@
+<html>
+ <head>
+  <title>
+   Panel Pterodatyl Murah Warz Store
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @keyframes borderBlink {
+            0% { border-color: red; }
+            20% { border-color: orange; }
+            40% { border-color: yellow; }
+            60% { border-color: green; }
+            80% { border-color: blue; }
+            100% { border-color: purple; }
+        }
+
+        body {
+            background: url('https://i.ibb.co.com/SXwXvk5/images-8u-GGj-RPq-transformed.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .profile-img {
+            border-radius: 50%;
+            border: 15px solid;
+            width: 150px;
+            height: 150px;
+            animation: borderBlink 2s infinite;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin: 20px 0;
+        }
+        .dropdown {
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid black;
+            border-radius: 25px;
+            font-size: 18px;
+        }
+        .contact-box {
+            background-color: rgba(211, 211, 211, 0.8);
+            border-radius: 25px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            text-align: left;
+            position: relative;
+        }
+        .contact-box i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .contact-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+        .whatsapp-button, .telegram-button {
+            display: block;
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .telegram-button {
+            background-color: #0088cc;
+        }
+        .ram-button {
+            display: none;
+            background-color: #FFA500;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+  </style>
+  <script>
+   function showRamButton() {
+            var selectedRam = document.getElementById('ramSelect').value;
+            var ramButtons = document.getElementsByClassName('ram-button');
+            for (var i = 0; i < ramButtons.length; i++) {
+                ramButtons[i].style.display = 'none';
+            }
+            if (selectedRam !== 'Pilih Ram Panel Anda....') {
+                document.getElementById(selectedRam).style.display = 'block';
+            }
+        }
+
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('backgroundMusic');
+            audio.play().catch(function(error) {
+                console.log('Autoplay was prevented:', error);
+            });
+        });
+  </script>
+ </head>
+ <body>
+     <audio autoplay loop>
+        <source src="mus.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung tag audio.
+    </audio>
+  <div class="container">
+   <img alt="Profile image of a character with a hat and sunglasses" class="profile-img" src="pp.png"/>
+   <div class="title">
+    PANEL PTERODATYL MURAH
+    <br/>
+    WARZ STORE
+   </div>
+   <select class="dropdown" id="ramSelect" onchange="showRamButton()">
+    <option>
+     Pilih Ram Panel Anda....
+    </option>
+    <option value="ram1GB">
+    🗳 3 GB #1.000
+    </option>
+    <option value="ram2GB">
+    🗳 4 GB #2.000
+    </option>
+    <option value="ram4GB">
+    🗳 5 GB #3.000
+    </option>
+    <option value="ram8GB">
+    🗳 6 GB #4.000
+    </option>
+    <option value="ram16GB">
+    🗳 7 GB #5.000
+    </option>
+    <option value="ram32GB">
+    🗳 8 GB #6.000
+    </option>
+    <option value="Unlimited">
+    🗳 Unlimited #8.000
+    </option>
+    <option value="Admin Panel">
+    🗳 Admin panel #10.000
+    </option>
+    <option>
+      ➡ 𝙂𝙍𝘼𝙏𝙄𝙎 𝙉𝙔𝘼 𝘿𝙄 𝘽𝘼𝙒𝘼𝙃
+    </opton>
+    <option value="fre1">
+    ✅  reseller
+    </option>
+    <option value="fre2">
+    ✅  sc bot pushkontak
+    </option>
+   </select>
+   <a class="ram-button" href="pay.html" id="ram1GB">
+   BUY RAM 3
+   </a>
+   <a class="ram-button" href="pay.html" id="ram2GB">
+   BUY RAM 4
+   </a>
+   <a class="ram-button" href="pay.html" id="ram4GB">
+    BUY RAM 5
+   </a>
+   <a class="ram-button" href="pay.html" id="ram8GB">
+    BUY RAM 6
+   </a>
+   <a class="ram-button" href="ram-16gb.html" id="ram16GB">
+  BUY RAM 7
+   </a>
+   <a class="ram-button" href="pay.html" id="ram32GB">
+  BUY RAM 8
+   </a>
+   <a class="ram-button" href="pay.html" id="Unlimited">
+    Buy Ram Unlimited
+   </a>
+   <a class="ram-button" href="pay.html" id="Admin Panel">
+    Buy Admin Panel
+   </a>
+     <a class="ram-button" href="reseller.html" id="fre1">
+    GRATIS 
+   </a>
+     <a class="ram-button" href="sc.html" id="fre2">
+    GRATIS
+   </a>
+   </div>
+  <div class="contact-box">
+   <i class="fas fa-phone">
+   </i>
+   <span class="contact-title">
+    CONTACT
+   </span>
+   <a class="whatsapp-button" href="https://wa.me/6282218603188">
+    WHATSAPP ME
+   </a>
+   <a class="telegram-button" href="https://t.me/WarzzXD">
+    TELEGRAM ME
+   </a>
+  </div>
+ </body>
+</html>

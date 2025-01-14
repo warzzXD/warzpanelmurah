@@ -1,0 +1,102 @@
+<html>
+ <head>
+  <title>
+   Payment Page
+  </title>
+  <style>
+   body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0000FF;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .qr-container {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        .qr-container img {
+            width: 100%;
+            height: 100%;
+        }
+        .qr-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 10px solid;
+            border-color: red orange yellow green blue indigo violet pink brown black;
+            animation: border-blink 1s infinite;
+        }
+        @keyframes border-blink {
+            0%, 100% { border-color: red; }
+            10% { border-color: orange; }
+            20% { border-color: yellow; }
+            30% { border-color: green; }
+            40% { border-color: blue; }
+            50% { border-color: indigo; }
+            60% { border-color: violet; }
+            70% { border-color: pink; }
+            80% { border-color: brown; }
+            90% { border-color: black; }
+        }
+        .container p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .container .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0000FF;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <h1>
+    SEGERA MELAKUKAN PEMBAYARAN
+   </h1>
+   <div class="qr-container">
+    <img alt="QR code for payment" src="pay.jpg"/>
+   </div>
+   <h2>
+    SCAN QR DI ATAS
+   </h2>
+   <a class="button" href="data.html">
+    LANJUT
+   </a>
+  </div>
+ </body>
+</html>
